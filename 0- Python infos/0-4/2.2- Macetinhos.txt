@@ -1,0 +1,61 @@
+'<%>' --> o resto da divisão de um num< com num> retorna o dividido:
+    exemplo:
+    7%50 --> retorna 7
+        Dessa forma, em casos que eu precise "pular" divisores indesejados, 
+        até que chegue num divisor desejado, isso é conveniente. Igual num
+        script de saque bancário.
+    exemplo2:
+    saque = R$ 378
+    notas = [100,50,20,10,5,1]
+    while saque!=0:
+        notasSacadas = floor(saque/notas[cont])
+        saque %= notas[cont]
+        cont += 1
+        if notasSacadas > 0:
+            print(f'Total de {quantidade} cédulas de R${cedulas[c]}')
+
+'len()' -->  função que retorna o total de valores numa lista
+    exemplo:
+    lista = ['a', 'x', 'q', 'w', 'r', 'y']
+    print(len(lista)) --> Total de 6 valores na lista
+
+'sum()' -->  função para somar os valores da lista 
+    exemplo:
+    lista = [4, 2, 6, 7, 5]
+    print(sum(lista)) --> A soma de todos valores é 24
+
+'max()' & 'min()' --> retorna o maior e menor valor de uma lista
+    exemplo:
+    lista = [5, 6, 2, 1]
+    max(lista) --> 6
+    min(lista) --> 1
+
+MÉDIA --> sum()/len()
+    lista = [2, 4, 5, 2, 7]
+    sum(lista) --> 20
+    len(lista) --> 5
+    sum(lista)/len(lista) --> 20/5 --> 4 
+
+END=''/while --> Usar várias prints na mesma linha [ONLY Numbers]
+    cont = int(input('Contar até: '))
+    num = 1
+    while num!=cont+1:
+        print(f'{num}-> ' if num!=cont else f'{num}!', end='')
+        num += 1
+    resultado (cont =5): '1-> 2-> 3-> 4-> 5!'
+
+Operador Walrus ':=' --> Criação de uma variável (com ou sem input) já no uso dela (if ou while);
+
+    Substitui o padrão de ( 'var=y', 'if var>=x' ):
+       
+    .   valor = int(input())
+    .   if valor>=1000:
+    .       bonus = 0.05 * valor
+    para:
+    .   if (valor := int(input('Valor vendido no mês: '))) >= 1000:
+    .       bonus = 0.05 * valor
+        else:
+            bonus = 0
+        print(f'Ganhou R${bonus} de bônus!')
+
+

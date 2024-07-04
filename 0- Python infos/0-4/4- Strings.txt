@@ -1,0 +1,61 @@
+{---Manipulando String-----------------------------------------------------------------------------
+    Strings são uma cadeia de caracteres lidas como um texto, até mesmo números, espaços, 
+    caracteres num geral, entre '' ou "", são vistas como Strings. Com isso, veremos abaixo
+    alguns meios para manipula-los:
+    Uma String é 'guardada' dentro da memória de forma dividida por cada um de seus
+    caracteres, incluindo espaços, números, letras, acentos/hífens, etc. 
+    Por exemplo, usemos:
+    frase = 'Amo café!'
+    |A|m|o| |c|a|f|é|!| 
+    |0|1|2|3|4|5|6|7|8| 
+        Nesse caso, temos no total 9 caracteres (contabilizado do 0 ao 8).
+    
+    Ainda usando:
+    frase = 'Amo café!'
+    frase[2] ------> Pega os caracteres das posições indicadas ---------------- letra o
+    frase[4:8] ----> Pega os caracteres das posições indicadas ---------------- café
+    frase[4:8:2] --> Pega os caracteres das posições indicadas pulando 2 ------ cf
+    frase.len() --------> Mostra quantidade de caracteres --------------------- len(frase) = 9 caracteres
+    frase.count() ------> Conta repetição do caracter ------------------------- frase.count('m') = 1 vez
+    frase.find() -------> Procura os caracteres escolhido --------------------- frase.find('café') = 4
+        frase.rfind() ----> 'right'find() -> pesquisa começando a partir do final da frase 
+    frase.replace() ----> Substitui/replace palavras por outra ---------------- frase.replace('café','açaí') = 'Amo açaí!'
+    frase.upper() ------> Todos os caracteres em maiúscula--------------------- frase.upper() = 'AMO CAFÉ!'
+    frase.lower() ------> Todos os caracteres em minúsculo -------------------- frase.lower() = 'amo café!'
+    frase.capilalize() -> Todos caracteres em minúsculo exceto 1 letra -------- frase.capitalize() = 'Amo café!'
+    frase.title() ------> Todas palavras começam com letra maiúscula ---------- frase.title() = 'Amo Café'
+    frase.strip() ------> Retira qualquer espaços no começo e fim da String --- frase.strip() 
+        frase.lstrip() ---->  'left' .lstrip() -> retira os espaços à esquerda  
+        frase.rstrip() ----> 'right' .rstrip() -> retira os espaços à direita
+    frase.split() ------> Frase dividida por suas palavras (inicia p espaço) -- frase.split() = 'Amo','café!'
+    frase.join() -------> Junta as palavras divididas formando 1 frase só ----- '-'.join.frase = 'Amo-café!'
+--------------------------------------------------------------------------------------------------}
+
+{---Macetinhos-------------------------------------------------------------------------------------
+    Alguns mecetes/dicas do uso das funções acima:
+    
+    Evita espaços numa String: (usando .strip(); .count(); len())
+
+        nome = str(input('Digite seu nome: ')).strip
+        print(f'Seu nome tem {len(nome)-nome.count(' ')} caracteres')     
+
+        .strip() pode ser usado após uma str(), dessa forma será contado SEM espaços no início e no fim da String.
+        .count(' ') pode ser usado para retornar o número de repetição do caracter 'espaço', e dessa forma, 
+        subtrair do total de caracteres nessa String (visto através de len()).
+        Ou seja, print(f'Seu nome tem {len(nome)-nome.count(' ')} caracteres!') = len(nome) subtraído(-) por nome.count().
+        
+    Faz cada palavra do nome completo iniciar com letras maiúscula: (usando '.title()')
+
+        name = str(input('Nome completo: ')).title()
+
+    Pesquisa uma palavra dentro de uma frase: (usando .lower() ou .upper(); e "' ' in name.lower/upper()")
+
+        name = str(input('Nome completo: ')).strip()
+        print(f'Seu nome tem Grando? {'SILVA' in name.upper()}')
+
+        .strip() --> repetindo função descrita acima;
+        .{'SILVA' in name.upper()} --> o '.upper()' colocará toda a String retornada em maiúscula e
+        depois ("'SILVA' in name.") pesquisará se há 'SILVA' em algum lugar dessa String.
+        
+--------------------------------------------------------------------------------------------------}
+    

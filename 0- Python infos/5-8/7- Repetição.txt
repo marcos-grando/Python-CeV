@@ -1,0 +1,186 @@
+
+    ESTRUTURAS REPETITIVAS
+    
+    Uma estrutura repetitiva são recursos das linguagens de programação responsáveis por executar 
+    um bloco de código repetidamente em um looping contínuo, através de determinadas condições 
+    especificas infinitamente ou até que as mesmas sejam atendidas. 
+
+{---Repetição for----------------------------------------------------------------------------------
+    
+    for var in range(1,11):     #Python conta até o número anterior escrito com fim (ou seja, range(1,11(-1)))
+        print('passo {var}')
+    print('Passo a passo concluído!')
+    Ou seja, vai escrever 'passo {1}', 'passo {2}', etc, 
+    até o 'passo {10}'.
+
+    for var in range(3, 0, -1)  #terceiro número é a interação dele na repetição
+        print(var)
+    print('Contagem regressia finalizada')
+    Ou seja, repetiu de '3' até '0', com a interação de '-1'
+    tornando uma contagem regressiva.
+
+    for var in range(0, 7, 2)
+        print(var)
+    print('Fim')
+    Ou seja, ele vai pular de 2 em 2: "0, 2, 4, 6, Fim"
+--------------------------------------------------------------------------------------------------}
+
+{---Repetição for com INPUT e LISTAS---------------------------------------------------------------
+
+    Com input incluso:
+    n = int(input('Número: '))
+    for var in range(0, n+1)    #1
+        print(var)
+    print('Fim')
+    Ou seja, eu posso colocar variáveis com valores definidos pelo usuário 
+    como elemento instrutivo para a repetição. Nesse caso, o número 
+    digitado no input(+1) se torna o último passo da estrutura repetitiva. 
+    #1 Se digitado 10, vai até 9; por isso +1, se digitado 10(+1=11)--> vai até 10;
+
+    Seguindo o exemplo acima, posso incluir um input para cada elemento instrutivo,
+    ou seja:
+    i = int(input('Início: '))
+    f = int(input('Fim: '))
+    p = int(input('Passo: '))
+    for var in range(i, f+1, p)
+        print(c)
+    pirnt('Fim')
+    Se i=2, f=9(+1), p=3 --> "2, 5, 8, Fim"; Ou:
+    Se i=1, f=5(+1), p=1 --> "1, 2, 3, 4, 5, Fim"; Etc 
+
+    Usando LISTAS com repetição:
+    n = []
+    for c in range(0,3):
+        n.append(int(input('Digite: ')))    #2
+    print(f'''Você escolheu:
+        Começar na casa {n[0]}
+        Terminar na casa {n[1]}
+        E {n[2]} passo de cada vez!''')
+    for d in range(n[0], n[1]+1, n[2]):     #3
+        print(f'Passo {d} --> ', end='')
+    print('Fim')
+    #2 Repetirá 3x isso e incluirá 3 valores na lista;
+    #3 Os valores da lista, escolhido pelo usuário, se tornarão instruções;
+
+    nomes = ['A', 'B', 'C', 'D', 'E']
+    idade = [10, 12, 15, 17, 18]
+    c = 0
+    for e in range(0, 5):
+    if nomes[e]==nomes[-1]:
+        print(f'E por fim, {nomes[e]} com {idade[e]} anos')
+        break
+    print(f'{nomes[e]} com {idade[e]} anos')
+--------------------------------------------------------------------------------------------------}
+
+{---Repetição while--------------------------------------------------------------------------------
+    
+    Dá para interpretar as sintaxe de while como uma "condição de parada", ou seja,
+    a repetição só termina quando a condição é atingida, retornando False. 
+    Essa sintaxe de repetição não fica restringida à um valor final pré estabelecido,
+    como funciona com o 'for'. 
+
+    var = 0
+    while var != 10+1:     #1
+        print(f'{var}--> ')
+        var += 1            #2
+    print('Fim')
+    Ou seja, vai repetir '{var}--> ', junto da soma do var+1, até que var seja 10.
+    Desta forma o programa cima retornará: '0--> 1--> ...--> 10 -->Fim'.
+    #1 Quando chega no 10, sendo 10+1, ele para após retornar valor com 10;
+    #2 +=1 faz com que o valor aumente 1 sempre que se repete (1+1=2, 2+1=3...etc);
+
+    var = 10
+    while var != 0-1:       #3 
+        print(f'{var--> '})
+        var -= 1            #4
+    print('Fim')
+    Ou seja, vai repetir '{var}--> ', junto da subtração do var-1, até que var seja 0.
+    #3 Quando chega no 0, sendo 0-1, ele para após retornar valor com 0;
+    #4 -= faz com que o valor subtraia 1 smepre que se repete (10-1=9, 9-1=8...etc);
+--------------------------------------------------------------------------------------------------}
+
+{---Condição while com INPUT e LISTAS:-------------------------------------------------------------
+    
+    {---Lista vazia -- 'append' com INPUT---}
+    nomes = []
+    idade = []
+    stop = 'n'
+    while stop=='n':
+        nomes.append(str(input('Nome: ')))
+        idade.append(int(input('Idade: ')))
+        stop = str(input('Parar?[s/n]: '))
+    Ou seja, enquanto a resposta 'n' (não) for respondida para input('Parar?'), as perguntas 
+    continuarão a serem feitas. Até que a resposta seja 's', indicando querer parar. 
+    
+    {---Lista pré estabelecida---}
+    nomes = ['A', 'B', 'C', 'D']
+    idade = [45, 40, 15, 10]
+    c = 0
+    while nomes[c]!=nomes[-1]:
+        print(f'{nomes[c]} com {idade[c]} anos')
+        c += 1
+        if nomes[c]==nomes[-1]:
+            print(f'E {nomes[c]} com {idade[c]} anos')  
+    Ou seja, enquanto o nome da lista (nomes[]) não for igual o último nomes da lista (nomes[-1]),
+    vai repetir o 'print('...')', no momento que o nome da lista for igual o último, vai retornar 
+    o 'print('E...')'; Dessa forma, consigo fazer com que uma lista seja repetida até o 
+    penúltimo nome, e o último tenha o acréscimo de "E", ou "E por fim", ou "Por último", etc. 
+--------------------------------------------------------------------------------------------------}
+
+{---while infinitos-whileTrue & StopFlag-----------------------------------------------------------
+   
+    {---while infinito - while True---}
+    c = 1
+    while True: 
+        print(f'{c}--> ')
+        c += 1
+    print('Fim')
+    O while true é um loop infinito SEM qualquer condição ou final pré estabelecido. Para 
+    que aja um final, utiliza-se o BREAK.
+
+    {---while infinito - com Stop Flag---}
+    n = 1
+    print("'0' pra parar!")
+    while n != 0:
+        n = int(input('Digite número: '))
+    Ou,
+    stop = 'n'
+    print("'s' pra parar!")
+    while stop!='s':
+        perg = input('Digite número: ')
+        stop = input('Parar? ')
+    Nesse caso usamos algum caractere ou comando como 'Stop Flag', desta maneira o programa
+    irá parar quando for acionado. No exemplo acima, enquanto 'stop' não for 's', continuará 
+    em looping; no momento que 'stop' == 's', aí interromp. 
+
+    Porém, nesse método, o comando 'Stop Flag' ainda retorna um valor antes de parar. Dessa forma,
+    por exemplo, se for um multiplicador constante e o 'Stop Flag' for '0', o último número 
+    multiplicado será por 0, dando um resultado errado do esperado. 
+    Para que isso não ocorra, há o BREAK.  
+--------------------------------------------------------------------------------------------------}
+
+{---Repetição BREAK--------------------------------------------------------------------------------
+
+    Não é uma sintaxe de repetição, mas um código utilizado para QUEBRAR (ou seja, terminar) 
+    a execução de uma. Desta forma, posso colocar para que a repetição aconteça enquanto 
+    tiver retornar True, no momento que retornar False o programa executará outro comando e 
+    BREAK, terminará o looping assim que finalizar o comando.
+
+    n = 0
+    print("'0' pra parar!")
+    while True:
+        n = int(input('Digite número: '))
+        if n==0:
+            break
+    Ou,
+    stop = 'n'
+    print("'s' pra parar!")
+    while True:
+        quest = input('Digite número: ')
+        stop = input('Parar? ')
+        if stop=='s':
+            break
+    Ou seja, em ambos os exemplos, há um loop infinito de repetição sem qualquer condição ou 
+    final pré estabelecido. Porém, dentro do loop colocamos uma condição, que caso retorne True
+    executa o BREAK, e dessa forma interrompe a repetição. 
+--------------------------------------------------------------------------------------------------}

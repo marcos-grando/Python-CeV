@@ -1,0 +1,10 @@
+Pergunta + efeito "em digitação".
+head_timeTitle() + readn_cleanNum + bold_() [opcional]
+
+    head_timeTitle(bold_('Chute:'), 2)
+    x = readn_cleanNum(' ')
+    print(x)
+
+    Em resumo, o segundo parâmetro de head_timeTitle() faz com que o "end=''"
+    seja ativado. Chamando o texto do próximo input.
+

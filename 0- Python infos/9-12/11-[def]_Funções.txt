@@ -1,0 +1,224 @@
+
+{---[ Básico de Funções ]--------------------------------------------------------------------------
+
+    Função são scripts criados para serem executados sempre que 
+    o usuário chamar esta funcionalidade.
+
+    funções possuem: 
+        - 'function():' --> Sem parâmetros 
+        - 'function(parâm):' --> Com parâmetros
+
+    {---[ SEM parâmetros ]-----------------------}
+        Exemplos de funções SEM parâmetros:
+            def linhas():
+                print('-=-=-=-=-=-=-=')
+            linhas()
+            print('Maravilha!')
+            linhas()
+        Aparecerá:
+        .   -=-=-=-=-=-=-=
+        .   Maravilha!
+        .   -=-=-=-=-=-=-=
+        Nesse caso, o comando que digitei na 'def linhas()' apareceram
+        sem qualquer interação ou mudança de valor.
+
+    {---[ COM parâmetros ]-----------------------}
+        Exemplos de funções COM parâmetros:
+            def linhas(txt):
+                print('-=-=-=-=-=-=-=')
+                print(f'{txt}')
+                print('-=-=-=-=-=-=-=')
+            title = 'Maravilha!'
+            linhas(title)
+        Aparecerá:
+        .   -=-=-=-=-=-=-=
+        .   Maravilha!
+        .   -=-=-=-=-=-=-=
+        No caso, posso alterar quantas vezes eu quiser o valor de "Title", 
+        colocando qualquer texto no lugar de "Maravilha!".
+--------------------------------------------------------------------------------------------------}
+
+{---[ Dicas de Parâmetros ]------------------------------------------------------------------------
+
+    {---[ ORDEM dos parâmetros ]----------------}
+        Os parâmetros sempre obedecerão na ordem que foram instruídos. 
+
+        Se eu quero dividir 10/5 através de uma função, faço:
+            def div(dividendo, divisor)
+                divisão = dividendo/divisor       
+            a = 10
+            b = 5
+            div(a/b) --> 10/5 == 2
+            div(b/a) --> 5/10 == 0.5
+
+        Portanto, a ORDEM de instrução dos parâmetros são importante.
+
+    {---[ LISTAS como parâmetros ]--------------}
+        Bem intuitivo e simples, mas também posso trabalhar
+        com listas sendo parâmetros. 
+        Por exemplo:
+            def onlyPar(listaPares, listaPrincipal):
+                for par in listaPrincipal:
+                    if par%2==0:
+                        listaPares.append(par)
+
+            nums = [1,2,3,4,5,6,7,8,9]
+            pares = []
+            onlyPar(pares, nums)
+            print(f'Números pares: {pares}.') --> "Números pares: [2, 4, 6, 8]"
+
+        Dessa forma, consigo usar uma função para inserir valores em uma nova lista.
+
+    {---['* parâm'--> Inúmeros parâm ]----------}
+        Se colocado '* parâm' --> indicará que receberá 
+        uma quantidade indeterminada de parâmetros.
+
+        Dessa maneira, faço:
+            def calc(*n):
+                print('Números digitados: ', end='')
+                for ns in n:
+                    print(f'{ns} ', end='')
+                print('!')
+            calc(1,5,6,6) --> "Números digitados: 1 5 6 6 !"
+--------------------------------------------------------------------------------------------------}
+
+{--------------------------[ Bibiliotecas de Funções - Import e Export ]--------------------------}
+   
+    Quando importamos uma biblioteca/module, por exemplo: 'from time import sleep';
+    estamos importando funções de uma biblioteca 
+    ou simplesmente toda uma biblioteca de funções.
+
+    Essas bibliotecas possuem funções externas criadas por outros programadores,
+    que muitas vezes não são intuitivas para o usuário. Para isso, podemos usar "help(função)".
+
+    Quando usamos essa "ajuda interativa", (Interactive Help = help()), 
+    é nos fornecido uma descrição dessa função e de seus parâmetros. 
+
+    Essa descrição é feita, também manualmente, através de um "Docstrings", ou seja,
+    um documento de texto.
+
+    Em resumo, uma biblioteca de funções possuem consigo, muitas vezes, Docstrings 
+    com descrição do que determinado função faz. 
+    Podemos ler essas Docstrings através do comando help().
+
+
+{---[ Interactive Help ]---------------------------------------------------------------------------
+    
+    help() --> função interna do Python.
+    Ao usarmos uma função dentro do "help()", nos fornecerá uma descrição 
+    sobre a função determinada. Por exemplo:
+        help(max)
+    Ao rodar o script, aparecerá no terminal informações
+    descritas na Docstrings por quem criou o comando.
+--------------------------------------------------------------------------------------------------}
+
+{---[ Docstrings ]---------------------------------------------------------------------------------
+
+    Para criar uma Docstrings:
+    Dentro de uma função, criar 6 'aspas duplas' -> """ """ e clicar enter, 
+    dessa forma, posso inserir conteúdo descritivo dentro da Docstrings.
+
+    Dessa maneira, seja para uso pessoal (como usar uma [def] depois de muito tempo),
+    ou para enviar a função para outro usuário usar, há a opção de ler 
+    o "manual de instrução" (ou melhor, a Docstrings) e entender sua aplicação. 
+    
+    Exemplo:
+        def div(dividendo, divisor):
+            """
+            -> executa uma divisão entre dois números
+            :param dividendo: número desejado a dividir
+            :param divisor: número desejado que seja o divisor
+            """
+            divid = dividendo/divisor
+            print(divid)
+
+    Se eu executo -> "help(div)" aparecerá:
+        div(dividendo, divisor):
+            -> executa uma divisão entre dois números
+            :param dividendo: número desejado a dividir
+            :param divisor: número desejado que seja o divisor
+
+    Ou seja, fiz uma descrição dentro de uma Docstrings junto da minha função.
+    Após isso eu usei a função internet help() para ler essa Docstrings.
+--------------------------------------------------------------------------------------------------}
+
+{---[ Parâmetros Opcionais ]-----------------------------------------------------------------------
+
+    Parâmetros Opcionais são executados quando não há parâmetro instruído.
+    Ou seja, EM CASOS dos parâmetros NÃO SEREM instruído na função, automaticamente 
+    será usado os opcionais. Dessa forma evitando erro de execução.
+
+    Exemplo1:
+    def soma(a=0, b=0, c=0, d=0):
+        n = a + b + c + d
+        print(n)
+    soma(1,2,3,1) -> (1+2+3+1) = 7
+    soma(1,2) -----> (1+2+0+0) = 3
+    soma() --------> (0+0+0+0) = 0
+
+    Exemplo2:
+    def mult(a=0, b=1, c=1, d=1)
+        n = a * b * c * d
+        print(n)
+    mult(2,3,4,2) -> (2*3*4*2) = 48
+    mult(2,3) -----> (2*3*1*1) = 6
+    mult() --------> (0*1*1*1) = 0
+--------------------------------------------------------------------------------------------------}
+
+{---[ Escopo de Variváveis ]-----------------------------------------------------------------------
+
+    Variável Global -> estrutura global & local
+    Variável Local  -> apenas estrutura local
+
+    {---[ Resumo ]------------}
+    
+        Escopo Global --> Variável Global são variáveis que irão valer
+        em todas estruturas de códigos escritos no programa.
+
+        Escopo Local --> Variável Local são variáveis que irão valer
+        APENAS na estrutura local de códigos do programa.
+
+        Ou seja, se eu tenho variáveis dentro de uma estrutura LOCAL, incluindo
+        uma [def]_FUNÇÃO, essas variáveis funcionarão APENAS na execução da função.
+        MAS, uma variável GLOBAL, funciona TAMBÉM dentro de uma estrutura local.
+
+    {---[ 'global var' ]------}
+        
+        Para criar uma variável global dentro de uma estrutura local,
+        utiliza-se: 'global var'. 
+        Exemplo:
+            def test():
+                global a
+                a = 17
+            n = a+2
+            print(n)-> (17+2)-> 19
+--------------------------------------------------------------------------------------------------}
+
+{---[ Retorno de Resultados ]---------------------------------------------------------------------
+
+    'return' -> comando especial de instrução que torna possível enviar o
+    resultado de uma função ou método de volta para o chamador.
+    Sem o 'return var', na tentativa de chamar
+    a função dentro do 'print()', retornaria "None".
+
+    Exemplo:
+        def test(a, b):
+            s = a + b
+            return s
+        res = test(2, 5)
+        ou
+        print(test(2, 5)) --> 7
+
+    Exemplo2:
+        def par(n=0):
+            if n%2==0:
+                return True
+            else:
+                return False
+
+        num = 7
+        if par(num):
+            print('Par!')
+        else:
+            print('Not's par!')
+--------------------------------------------------------------------------------------------------}

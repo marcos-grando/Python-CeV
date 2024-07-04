@@ -1,0 +1,165 @@
+{---Tuplas & Listas são variáveis compostas!-------------------------------------------------------
+
+    Podemos chamar uma variável composta de uma 'Estrutura de Armazenamento'.
+
+    Uma variável composta permite o armazenamento de um ou mais dados em uma ou mais posição.
+    Variáveis compostas são classificadas em:
+        - homegêneas (vetoriais)
+        - heterogêneas (registros)
+    
+    Podemos usar Tuplas(), Listas[] e Dicionários{} como função de variável composta.
+
+    Alguns fatiamentos usando var composta:
+        age=[14, 18, 36, 45]
+        print(age[2]) --> 36
+        print(age[0:2+1]) --> 14, 18, 36    (ignora o último solicitado, usar +1)
+        print(age[1:]) --> 18, 36, 45       (até o final)
+        print(age[-1]) --> 45
+
+    Variável composta com FOR:
+        age=[14, 18, 36, 45]
+        for i in age:
+            print(i, end='')
+        "14, 18, 36, 45"
+--------------------------------------------------------------------------------------------------}
+
+{---[ Listas --> var = [] ]------------------------------------------------------------------------
+
+    Em Python, uma lista é uma coleção ordenada de valores.
+    São utilizadas para armezenar diversos itens em uma única variável composta, 
+    desta maneira criando, literalmente, uma lista de valores.   
+        Exemplo:
+            
+            listaNome = ['A', 'B', 'C', 'D']
+            listaIdade = [14, 16, 29, 40]
+            print(f'O grupo tem: ', end='')
+            for grupo in range(0, len(listaNome)):
+                print(f'{listaNome[grupo]} com {listaIdade[grupo]} anos.', end='')
+            --> O grupo tem: A com 14 anos. B com 16 anos. C com 29 anos. D com 40 anos.
+
+        Dessa forma, ambas listas serão citada no print(), 
+        retornando o nome de cada pessoa do grupo com suas 
+        respectivas idades.
+
+    {---[ Adicionar/remover valores ]---------------------}
+        Com listas podemos adicionar, remover e até substituir seus valores. 
+        Por exemplo:
+            
+            lista = ['abacaxi', 'morango', 'uva', 'maçã']
+            lista[1]='melancia'
+
+            Isso substituirá o valor [1] da lista pelo novo valor.
+
+    {---[ Outros métodos: ]-------------------------------}
+
+        lista.append() --> adiciona um novo valor no final da lista 
+        lista.insert(2,) --> adiciona um novo valor na posição 2 (ou qualquer outra digitada)
+            Nesse caso, valor digitado entra na posição digitada 
+            empurrando os valores 1 posição à frente
+        
+        del lista[1] --> deleta o valor da posição 1 na lista
+        lista.pop(1) --> delete o valor da posição 1 na lista
+        lista.remove('morango') --> deleta na lista o valor digitado
+            No 3 métodos de excluir um valor numa lista, os valores 
+            que estão à frente na posição retrocedem uma casa.
+            Exemplo: lista=[a, b, c, d]
+            logo, lista[0] = a,   lista[1] = b,   lista[2] = c,   lista[3] = d
+            del lista[0] 
+            logo, lista[0] = b,   lista[1] = c,   lista[2] = d,
+
+        if 'x' in lista:
+            lista.remove('x')
+        Não ocorre erro e caso X entrar na lista, é removido.
+
+    {---[ Listas in Lista - 1 ]---------------------------}
+        
+        Nesse exemplo criarei uma 'lista' que irá receber várias listas.
+        Depois criarei duas outras listas com valores diferentes, e irei
+        adicionar essas listas dentro da primeira lista.
+
+        listas = []
+
+        lista1 = []
+        lista1.append('Marcos')
+        lista1.append(22)
+
+        lista2 = []
+        lista2.append('Fiona')
+        lista2.append(21)
+
+        listas.append(lista2)
+        listas.insert(0, lista1)
+
+        print(listas) --> [['Marcos', 22], ['Fiona', 21]]
+
+        Dessa forma temos 'listas'-> [ [lista1], [lista2] ] 
+        Podendo adicionar outros dados em forma de lista dentro dessa lista maior.
+    
+    {---[ Listas in Lista - 2 ]---------------------------}
+
+        Inserindo listas com dados em uma lista maior.
+        
+        listas = []
+        listas.insert(0, ['Marcos', 22, 'macho'])
+        listas.insert(1, ['Fiona', 21, 'fêmea'])
+        listas.insert(2, ['Ryu', 35, 'macho'])
+        listas.append(['Keith', 10, 'fêmea'])
+        listas.insert(3, ['Sum', 12, 'macho'])
+
+        print(listas) --> [[lista1],[lista2],[lista3],[lista4],[lista5]]
+        ---------------------------------------------------
+
+        Também posso inserir listas sem dados dentro de uma lista maior:
+        
+        listas = []
+        listas.append([]*5)
+        
+        print(listas) --> [ [], [], [], [], [] ] 
+        Dessa forma, adicionei 5 listas dentro da lista maior.
+        Porém, é ineficiente pois criando as listas enquanto adiciona os dados 
+        é muito mais eficiente.         
+--------------------------------------------------------------------------------------------------}
+
+{---[ Tuplas --> var = () ]------------------------------------------------------------------------
+
+    'AS TUPLAS SÃO IMÚTAVEIS' - ou seja, durante sua execução não há script que permita 
+    modificar os dados já registrados na tupla. Apenas alterando o código manualmente. 
+    Ou seja, se eu tenho:
+        numTupla = (1, 2, 5, 7, 4)
+        numTupla[0] = 8
+    Nesse caso, vai dar erro. Pois estou tentando modificar um valor da Tupla pelo script.
+    Para fazer isso, deve-se manualmente mudar o valor desejado pelo novo número.
+
+    tupla = ('arroz', 'feijão', 'carne', 'batata')
+
+    for var in tupla:
+        print(f'Comi {var}')
+        #1
+    
+    for cont, var in enumerate(tupla):
+        print(f'Comi {cont}º --> {var}')
+        #1.5
+
+    for var in range(0, len(tupla))
+        print(f'Comi {tupla[var]}')
+        #2
+
+    #1-> colocando apenas a varíavel na formatação já vai receber os valores dentro da tupla 
+    um por um na repetição;
+    #1.5-> usando a mesma lógica, mas usando uma segunda 'var' + a função 'enumerate()', 
+    dessa forma o 'cont' vai ser 'enumerado' a partir do 0 repetidamente. 
+    #2-> usa-se formatação padrão de print.    
+--------------------------------------------------------------------------------------------------}
+
+
+
+
+
+
+
+
+
+
+
+
+

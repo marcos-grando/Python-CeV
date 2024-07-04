@@ -1,0 +1,11 @@
+nickname = input('Qual seu nickname(apelido) costumamente usado?') 
+
+print('O tipo primitivo desse valor é:', type(nickname))
+print('Inicia com letra maiúscula?', nickname.istitle())
+print('Os caracteres são letras?', nickname.isalpha())
+print('Os caracteres são alfanuméricos?', nickname.isalnum())
+print('Os caracteres são dígitos?', nickname.isdigit())
+print('Os caracteres são númericos?', nickname.isnumeric())
+print('Os caracteres são imprimíveis?', nickname.isprintable())
+print('Os caracteres estão em letras minúsculas?', nickname.islower())
+print('Os caracteresestão em letras maiúscula?', nickname.isupper())

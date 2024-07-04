@@ -1,0 +1,75 @@
+==============================================================
+
+Att mais recente:
+
+Além de eu não ter tido sucesso em 100% do que eu queria fazer,
+percebi mais recentemente, enquanto aprendo MySQL, que minha ideia
+era na verdade a criação de algo parecido com uma "chave primária".
+
+Claro, guardado às proporções. 
+
+Ainda assim, deixarei registrado aqui como uma brincadeira dos meus 
+primeiros aprendizados com programação num geral. 
+
+Ou seja, todos os arquivos 8- ou 8.5- são inúteis e desnecessários.
+
+==============================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+#com sistema de RG: ['nome', RG]     ===     'RG' sempre único, dados pessoas podem ser repetidos!
+
+lista = [['pessoa A', 0],['pessoa B', 1],['pessoa C', 2],['pessoa D', 3],['pessoa E', 4]]
+
+if len(lista)==1:
+    print(f'Temos apenas 1 pessoa cadastrada:')
+    print(f'{lista[0][0]}.')
+
+elif len(lista)==2:
+    print(f'Temos 2 pessoas cadastradas:')
+    for lp in range(0,len(lista)):
+        if lista[lp][1]!=lista[-1][1]:
+            print(f'{lista[lp][0]} e', end=' ')
+        elif lista[lp][1]==lista[-1][1]:
+            print(f'{lista[lp][0]}.')
+    OR
+elif len(lista)==2:
+    print(f'Temos 2 pessoas cadastradas: {lista[0][0]} e {lista[1][0]} !')
+
+elif len(lista)>=3:
+    for lp in range(0,len(lista)):
+        if lista[lp][1]!=lista[-1][1] and lista[lp][1]!=lista[-2][1]:
+            print(f'{lista[lp][0]},', end=' ')
+        elif lista[lp][1]==lista[-2][1]:
+            print(f'{lista[lp][0]} e', end=' ')
+        elif lista[lp][1]==lista[-1][1]:
+            print(f'{lista[lp][0]}.')
+    OR 
+elif len(lista)>=3:
+    print(f'Temos {len(lista)} pessoas cadastradas:')
+    for lp in range(0,len(lista)):
+        if lista[lp][1]!=lista[-1][1]:
+            print(f'{lista[lp][0]};')
+        elif lista[lp][1]==lista[-1][1]:
+            print(f'E {lista[lp][0]}.')        
+
+    Dessa forma, se a quantidade TOTAL de registro for IGUAL 1 (len()==1):
+        O programa irá apenas citar o único nome registrado na lista.
+
+    Se a quantidade total de registro for IGUAL 2 (len()==2)
+        O programa irá citar os 2 nomes registrados formatando com um 'e' entre eles;
+            exp: 'pessoa A e' 'pessoa B'.
+
+    Se a quantidade total de registro for IGUAL ou MAIOR que 3 (len()>=3)
+        O programa citará todos nomes registrado formatando com ',' até o penúltimo, e com 'e' antes do último;
+            exp: 'pessoa A,' 'pessoa B,' 'pessoa C,' 'pessoa D e' 'pessoa E.'

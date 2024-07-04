@@ -1,0 +1,1 @@
+from mydefs_package.money_mdl.defs_money import *

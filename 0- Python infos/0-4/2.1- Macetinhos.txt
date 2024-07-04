@@ -1,0 +1,89 @@
+'listaB = ListaA[:]' --> cria cópia de uma lista;
+    
+    Usando 'listaB = listaA' somente, Python cria uma 
+    ligação entre as duas, e tudo que eu fizer em uma, 
+    vai alterar na outra também.
+    
+    Usando 'listaB = listaA[:]', basicamente, cria-se uma nova lista 
+    que receberá os valores da listaA, não ocorrendo nenhum 
+    ligação entre elas.  
+
+([int(x) for x in lista]) --> transforma uma lista de string em números int() [ONLY Number]
+    exemplo:
+        lista = ['1', '2', '5', '7', '4']
+        print(f'Maior número é max(([int(x) for x in lista]))!')
+        print(f'Menor número é min(([int(x) for x in lista]))!')
+        Isso pq 'sum()', 'max()', 'min()', etc, NÃO funcoinam com Strings,
+        portanto, em caso da lista com números precisar ser Strings, usasse esse macete.
+
+'var = []' --> cria-se uma lista com valores dentro dela.
+    Exemp:
+        listaDeFrutas = [ameixa, maçã, goiaba]
+        listaDeAprovados = [Marcos, Humbert, Grando, Sara, Jéssica]
+
+'var[-1, -2, -etc]' --> cita os valores de trás pra frente.
+    Ou seja, -1 --> último da lista; -2 --> penúltimo da lsita; -3 --> antipenúltimo; etcetcetc
+    Exemplo:
+        num = [1,2,3,4,5,6,7,8,9,10]
+        num[-1] --> 10
+        num[-2] --> 9
+        num[-3] --> 8
+        num[-4] --> 7
+        num[-1:-4] --> 10,9,8,7 
+
+'sorted()' --> mostra sob ordem crescente numericamente ou alfabeticamente;
+    funciona para lista ou valores únicos.
+    Exemp:
+        OrdAlf = sorted(c, d, o, b, a) ----> [a, b, c, d, o]
+        OrdNum = sorted(5, 6, 4, 7, 1) ----> [1, 4, 5, 6, 7]
+            Para citar apenas um único elemento da lista, utiliza-se 
+            a variável da lista + número de colocação dela, exemplo:
+                OrdAlf[0]-->a , ou, OrdAlf[2]-->c
+            Para citar o ÚLTIMO elemento da lista, utiliza-se [-1]:
+                OrdAlf[-1]-->o 
+
+    'sorted()' em conjunto com lista:
+        listaAlf = [c, d, o, b, a]  ------->  ordemAlf = sorted(listaAlf)-->[a, b, c, d, o]
+        listaNum = [5, 6, 4, 7, 1]  ------->  ordemNum = sorted(listaNum)-->[1, 4, 5, 6, 7]
+
+'sort()' --> altera todos os valores da lista para ordem crescente 
+    Parecido com 'sorted()', mas aqui o método modifica a ordem de todos
+    os valores dentro da lista. Então, não há como criar uma nova variável 
+    para receber a lista ordenada, enquanto mantém a lista desordenada.
+    Exemplo: 
+        lista = [1, 4, 2, 6, 8]
+        lista.sort()
+        print(lista) --> 1,2,4,6,8
+
+        Se eu tentar fazer igual sorted() vai dar [ERRO]!:
+        lista = [1, 4, 2, 6, 8]
+        ordAlf = sort(lista) --> None
+
+'sort/sorted(reverse=True)' --> ordem descrescente
+    Exemplo sort(): 
+        lista = [1, 4, 2, 6, 8]
+        lista.sort(reverse=True)
+        print(lista) --> 8,6,4,2,1
+
+    Exemplo sorted(): 
+        lista = [1, 4, 2, 6, 8]
+        print(sorted(lista, reverse=True)) --> 8,6,4,2,1    
+
+'index()' --> usando index() para ordem alfabética SEM perder a ordem númerica;
+    exemplo:
+    
+    times = [imagine 20 times nessa lista em ordem de colocação (1º ao 20º lugar)]
+    ordAlf = sorted(times)
+    for c in range(0,20):
+        print(f'{ordAlf[c]} em {times.index(ordAlf[c])+1}º lugar')
+
+    Dessa forma, se o 20º lugar tendo inicial "A" irá ser citado na primeira linha, 
+    e se o 1º lugar tendo inicial "V", respeitará ordem alfabética enquanto mostra a colocação,
+    assim --> América em 20ºlugar .... .... .... .... .... Vasco em 1º lugar
+
+# Contagem (pro/re)gressiva:
+    cont = int(input('Contar até: '))
+    for num in range(cont+1):
+        print(f'{num}-> ' if num!=cont else f'{num}!', end='')
+
+

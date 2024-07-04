@@ -1,0 +1,92 @@
+No python, é possível utilizar operadores aritmético com String's,
+e dessa forma Replicar Informações:
+    'Oi'*5 --> OiOiOiOiOi
+    'Mexe'*3 --> MexeMexeMexe
+
+Operadores de formatação:
+    ^ -> centraliza
+    < -> formata à esquerda
+    > -> formata a direita
+    exemplo: 
+        print(f'{Macarrão:.<30}', end='')
+        print('R$ 7:.2f')
+        Macarrão............R$ 7.00
+    exemplo2:
+        print(f'{"Operação X":-^20}')
+        -> vai centralizar o texto entre 20 caracteres (incluso espaços)
+        ----Operação X----
+
+'print('.'.join(''))' --> coloca . entre cada letra da palavra dentro de join()
+    Exemplo:
+        print('.'.join('Marcos Grando'))
+        --> M.a.r.c.o.s. .G.r.a.n.d.o
+        Com esse método posso usar outros caracteres.
+
+'.split()' separa uma frase em suas palavras, criando uma lista;
+    nome = input('Nome: ')
+    nomeSeparado = nome.split()
+    
+    print(f'Seu primeiro nome {nomeSeparado[0]} tem {len(nomeSeparado[0])} caracteres!')
+
+('len()' - '.count()') --> Contar/mostrar somente letras; 
+    
+    nome = str(input('Nome completo: ')).strip()
+    print(f"Usando .len()-count(' ') --> Seu nome tem {len(nome)-nome.count(' ')} caracteres")
+
+    Dessa forma usa-se o resultado em número do len() substraído pelo número de ' ' (espaços),
+    contando apenas as letras do nome/frase.
+
+'print({preço:.<30})' --> para criação de tabelas de preço
+    exemplo:
+    preço = ('A', 15, 'B', 10)
+    print(f'{preço[0]:.<30}', end='')
+    print(f'R$ {preço[1]:.2f}')
+    print(f'{preço[2]:.<30}', end='')
+    print(f'R$ {preço[3]:.2f}')
+    A.............R$ 15,00
+    B.............R$ 10,00
+
+'if in ( )' --> inúmeras condicionais na mesma estrutura;
+    exemplo:
+    num = int(input('Num até 10: '))
+    if num in (1, 3, 5, 7, 9):
+        print('ímpar')
+    if num in (2, 4, 6, 8, 10):
+        print('par')
+
+'print('x' if else '=') --> condicional (if else) dentro de um print();
+    exemplo1:
+    age = int(input('Sua idade: '))
+    print(f'Maior de idade' if age>=18 else 'Menor de idade')
+    
+    exemplo2:
+    num = int(input('Digite num: '))
+    print('par' if num%2==0 else 'ímpar') 
+
+'\n' --> significa "nova linha", ou melhor dizendo, faz uma quebra de linha.
+    Exemp:
+        print('Ashirehê, há de rê!  \n Unbunto uratanga nova!')
+            Na tela --> "Ashirehê, há de rê!
+                        Unbunto uratanga nova!"
+
+Produtos......R$preços formatação contábil;
+    for tab in range(0, len(prodPreç), 2):
+        print(f'{prodPreç[tab]:.<30}', end='')
+        print(f'R$ {prodPreç[tab+1]:>6.2f}')
+
+Palavras com 'exclui consoante' (ou melhor, só deixando vogal);
+    vogal = 'aeiouAEIOU'
+    for palavra in tupla:
+        print(f'{palavra} = ', end='')
+        print(''.join(vog for vog in palavra if vog in vogal))
+
+    Ambas as de cima e de baixo, são semelhantes. Porém, a última 
+    linha de cima substitui as três últimas de baixo. 
+
+    for palavra in tupla:
+        print(f'\n{palavra} = ', end='')
+        for vog in palavra:
+            if vog in 'aeiouAEIOU':
+                print(vog, end='')
+
+

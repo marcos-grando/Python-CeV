@@ -1,0 +1,18 @@
+115- último exerício de Python do Guanabara(CursoemVídeo).
+Basicamente, foi fazer um sistema que cadastre 'nome' e 'idade' e também
+permita ver os cadastros já feitos anteriormente (usando um banco de dados). 
+
+Para isso fiz algumas funções do corpo do script em "my_defs_body", como:
+O cabeçalho; 
+O 'menu de escolha' (entre ver a lista ou novo cadastro);
+A própria lista;
+Ou a interação de um novo cadastro.
+
+Essas funções possuem outras defs em "my_defs" por trás de suas funcionalidades, como: 
+fazer a inserção dos dados ('nome' e 'idade') num banco de dados;
+Solicitar ao usuário para confirmar se os dados estão corretos;
+Ou tratar erros caso a idade seja digitada 
+com caracteres não numéricos.
+
+Todas essas funções registram ou usam os dados dentro de um arquivo de texto.
+Ou seja, um arquivo.txt que será inserido todas os dados de nomes e idades.

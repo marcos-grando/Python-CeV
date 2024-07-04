@@ -1,0 +1,46 @@
+{---Tipos Primitivos----------------------------------------------------------}
+    (inteiro)   int()   = Números Inteiros  - 9; -4; 11; etc;
+    (flutuante) float() = Números Reais     - 5,6; -4,072; 7,0; etc;
+    (Booleano)  bool()  = Valores lógicos   - 'True' ou 'False'
+    (String)    str()   = Textos(inclui N's)- 'Olá'; 'Tenho 20 anos'; '20'; etc;
+
+    type(var) - Para saber o tipo primitivo da variável (dessa forma, consigo saber se é string, inteiro, etc)
+        Ex.:    n1 = 2;      print(type(n1));     <class 'stg'> 
+                n2 = int(2)  print(type(n2));     <class 'int'>
+
+Único operador aritmético presente em Python que não tem em JS é:
+    Divisão Inteira (//)
+
+{---Dissecando Variável-------------------------------------------------------}
+    istitle()      – Verifique se cada palavra começa com uma letra maiúscula
+    isalpha()      – Verifique se todos os caracteres no texto são letras 
+    isalnum()      – Verifique se todos os caracteres no texto são alfanuméricos
+    isdigit()      – Verifique se todos os caracteres no texto são dígitos
+    isnumeric()    – Verifique se todos os caracteres no texto são numéricos
+    isprintable()  – Verifique se todos os caracteres no texto são imprimíveis
+    isspace()      – Verifique se todos os caracteres no texto são espaços em branco
+    islower()      – Verifique se todos os caracteres do texto estão em minúsculas
+    isupper()      – Verifique se todos os caracteres do texto estão em maiúsculas
+    isascii()      – Verifique se a sequência é composta por todos os caracteres ASCII ou se a sequência 
+        estiver vazia também retornara true
+    isdecimal()    – Verifique se todos os caracteres no objeto unicode são decimais
+    isidentifier() – Verifique se a sequência é um identificador válido :: O método isidentifier() 
+        retornará True se a string for um identificador válido, caso contrário, False. Uma sequência 
+        é considerada um identificador válido se contiver apenas letras alfanuméricas (a-z) e (0-9) 
+        ou sublinhados (_). Um identificador válido não pode começar com um número ou conter espaços.
+
+    print('Inicia com letra maiúscula?', nickname.istitle())
+    print('Os caracteres são letras?', nickname.isalpha())
+    print('Os caracteres são alfanuméricos?', nickname.isalnum())
+    print('Os caracteres são dígitos?', nickname.isdigit())
+    print('Os caracteres são númericos?', nickname.isnumeric())
+    print('Os caracteres são imprimíveis?', nickname.isprintable())
+    print('Os caracteres são espaços em branco?', nickname.)
+    print('Os caracteres estão em letras minúsculas?', nickname.islower())
+    print('Os caracteresestão em letras maiúscula?', nickname.isupper())
+    print('A sequência é vazia ou composta por ASCII?', nickname.isascii())
+    print('Os caracteres no objeto unicode são decimais?', nickname.isdecimal())
+    print('A sequência é um identificador válido?', nickname.isidentifier())
+
+
+

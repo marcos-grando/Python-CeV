@@ -1,0 +1,99 @@
+{---Import - importação de bibliotecas-------------------------------------------------------------
+    
+    Em Python podemos importar bibliotecas de comandos e funcionalidades. Dessa forma, 
+    trazemos uma série de possibilidades e funções para execução.
+
+    Por exemplo, mesmo tendo todos os operadores aritméticos básicos funcionando,
+    podemos através da biblioteca 'math' utilizar diversas funções aritméticas. Para 
+    trazer um biblioteca apenas "import math" (ou outro 'módule' desejado).
+        
+    ATENÇÃO: Quando importamos uma biblioteca trazemos TODAS funções disponíveis, portanto,
+    o uso de memória poderá ser grande e podendo causar lentidão na execução do código. 
+    Para evitar isso, há a opção de importar APENAS a funcionalidade desejada.
+        Para evitar sobrecarga desnecessária de memória, podemos 
+        trazer APENAS a funcionalidade desejada, dessa forma:
+            from math import srqt, floor
+--------------------------------------------------------------------------------------------------}            
+
+{---biblioteca 'math':-------------------------------------------------------------------------
+    
+    import math
+    raiz = math.srqt(number)
+    print('Raiz é {floor(raiz):.2f}')
+        Dessa forma colocamos tudo dentro da chave da variável, colocando primeiro 
+        a função da biblioteca colocando variável dentro dos parênteses 'floor(raiz)',
+        por fim podemos colocar uma formatação ':.2f' no final da chave.
+
+    Quando usamos 'math.' aparecerá uma janela com diversas opções de funcionalidades
+    que a biblioteca oferece.
+    Algumas dessas funcionalidades:
+        sqrt()  ------> Raiz Quadrada de um numero ------- qrt(numero)
+        pow() --------> Potencia de um numero ------------ pow(2, 3) = 2³ = 8
+        factorial() --> executa a função fatorial -------- factorial(x)
+        floor() ------> arredondamento para baixo -------- 5,99 fica 5
+        ceil() -------> arredondamento para cima --------- 5,01 fica 6
+        trunc() ------> exclui números pós vírgula ------- 7,45 fica 7 
+        hypot() ------> Retorna a hipotenusa dos catetos - hypot(co, ca)
+        radians()-----> Converte em graus radianos ------- print(radians(180))
+        cos() --------> Retorna o cosseno em radianos ---- print(cos(radians(x)))
+        sin() --------> Retorna o seno em radianos ------- print(sin(radians(x)))
+        tan() --------> Retorna a tangente em radianos --- print(tan(radians(x)))
+----------------------------------------------------------------------------------------------}            
+
+{---biblioteca 'time'(tempo):------------------------------------------------------------------
+
+    A biblioteca time tem o método 'sleep()', que pode ser colocado entre scripts
+    para criar um tempo de intervalor entre um código ao outro. Exemplo:
+    name = input('Qual seu nome? ')
+    
+    from time import sleep
+    print('Processando...')
+    sleep(3)
+    print('Seja bem vindo {name}!')
+
+    Dessa forma, vai dar um intervalo de 3 segundos entre o "Processando..." e 
+    as "boas vindas".
+----------------------------------------------------------------------------------------------}
+
+{---biblioteca 'random':-----------------------------------------------------------------------
+    random -> Gerar numeros pseudoaleatorios
+        randint() --> Retorna um numero inteiro no range ---------- random.randint(1, 10)
+        choice() ---> Retorna um elemento aleatório da sequência -- random.choice(x)
+        shuffle() --> Embaralha a sequência x no lugar ------------ random.shuffle(y)   
+----------------------------------------------------------------------------------------------}   
+
+{---biblioteca 'datetime'(datas/fusos, etc):---------------------------------------------------
+
+    A biblioteca 'datetime' traz funções de data/hora atual, etc. Como por exemplo:
+        'date' --> from datetime import date 
+        anoAtual = date.today().year
+        print(f'O ano atual é {anoAtual}!')
+----------------------------------------------------------------------------------------------}   
+
+{---PARA VER OUTRAS BIBLIOTECAS::--------------------------------------------------------------
+    Site oficial do Python -> 'docs' -> selecionar versão python instalada ->
+    -> 'library reference' -> crtl f = 'module' -> e clicar no desejado !
+
+        Dessa forma consigo analisar e ver exemplos de todas funcionalidades 
+    disponíveis na biblioteca desajada. Assim auxilia no uso da biblioteca
+    e também ajuda estudar sobre ela.
+
+    Site oficial do Python -> 'pypi' !
+        Lista de bibliotecas compartilhadas. Maioria delas são opções que não estão
+        disponíveis dentro do python, portanto se escolho um delas e digito o comando
+        de importação 'import moduleX' não funcionará. 
+        Mas funcionar, será necessário a instalação do pack 'moduleX', aí sim,
+        usando a importação 'import moduleX' funcionará. 
+        ((Muitas bibliotecas o próprio IDE faz a instalação))
+        ((Apenas necessário clicar na lâmpada vermelha após digitar o import))
+
+    https://www.webfx.com/tools/emoji-cheat-sheet/ (site p/ emojis)
+----------------------------------------------------------------------------------------------}   
+        
+
+( ) ) ) ( ( ( ( ) ) 
+0 1 2 3 4 5 6 7 8 9
+
+for c in range(0, len(lista)):
+    if lista[c]==')':
+        count

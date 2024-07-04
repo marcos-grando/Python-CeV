@@ -1,0 +1,78 @@
+
+    ESTRUTURAS CONDICIONAIS
+    
+    Uma estrutura condicional instrui o progama se deve ou não ser executado de 
+    acordo com a condição colocada. Dessa forma, o programa passa ser capaz de 
+    tomar decisões com base em valores e resultados gerados durante sua execução. 
+
+{---Condição Simples-------------------------------------------------------------------------------
+    if condição:
+    .   script 1
+    Ou seja, 'Se isso acontecer: script1'
+
+        Exemplo:
+        age = int(input('Sua idade: '))
+        if age >= 18:
+        .   print('Maior de idade')
+        print('--fim--')
+--------------------------------------------------------------------------------------------------}
+
+{---Condição Composta------------------------------------------------------------------------------
+    if condição: 
+    .   script 1
+    else:
+    .   script 2
+    Ou seja, 'Se isso acontecer: script 1
+    .        se não acontecer: script 2'         
+
+        Exemplo:
+        age = int(input('Sua idade: '))
+        if age >= 18:
+        .   print('Maior de idade!')
+        else:
+        .   print('Menor de idade!')
+        print('--fim--')
+        
+        Estrutura composta de forma simplificada:
+        .   age = int(input('Sua idade: '))
+        .   print('Maior de idade!' if age>=18 else 'Menor de idade!')
+        .   print('--fim--')
+--------------------------------------------------------------------------------------------------}
+
+{---Condição Aninhada------------------------------------------------------------------------------
+    if condição:
+    .    script 1
+    elif condição:
+    .    script 2
+    elif condição:
+    .    script 3
+    else:
+    .    script 4
+    Ou seja, 'Se acontecer isso: script 1
+    .         Se acontecer isso: script 2
+    .         Se acontecer isso: script 2
+    .         Se não acontecer: script 4'
+
+        Exemplo:
+        age = int(input('Sua idade: '))
+        if age <= 10:
+        .   print('Você é uma criança!')
+        elif age >10 and <18:
+        .   print('Você é um adolescênte!')
+        elif age >=18 and <=26:
+        .   print('Você é um jovem adulto!')
+        elif age >26 and <64:
+        .   print('Você é um adulto!')
+        else:
+        .   print('Você é um idoso!')
+        print('--fim--')
+--------------------------------------------------------------------------------------------------}
+
+{---Condição 'in lista':--------------------
+    lista = [maçã, ameixa, laranja]
+    if/elif in lista:
+        script 1
+    ou
+    if/elif in 'maçã ameixa laranja':
+        script 1        
+-------------------------------------------}

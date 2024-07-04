@@ -1,0 +1,38 @@
+
+{---Style(ANSI)------------------------------------------------------------------------------------
+
+    Existem bibliotecas que trazem funções com estilos, cores e designs. Por ora, utilizaremos 
+    algo mais simples/básico: ANSI-escape sequence
+
+    Para isso, usaremos o código: '\033[style;text;background m]'
+        style: estilo da fonte;
+        text: cor do texto;
+        back: cor do fundo.
+    Exemplo:
+        \033[0;33;44m]
+        
+    pré-style: 0 (none);        pré-text: 30 (preto);      pré-back: 40 (preto);    
+    .          1 (bold);                  31 (vermelho);             41 (vermelho);  
+    .          4 (underline);             32 (verde);                42 (verde);      
+    .          7 (negative).              33 (amarelo);              43 (amarelo);   
+    .                                     34 (azul);                 44 (azul);
+    .                                     35 (roxo);                 45 (roxo);
+    .                                     36 (ciano);                46 (ciano);
+    .                                     37 (cinza).                47 (cinza).          
+    .                                     97 (branco).               107 (branco).
+    SEMPRE colocar '\033[m' no final de qualquer código para que 
+    o efeito estilizado se limite ao código desejado.        
+
+    É possível criar LISTAS de cores no início do programa e assim apenas trazer a cor
+    desejada nos linhas posteriores. Exemplo:
+
+    colors = {'limpar':'\033[m', 'vermelho':'\033[31m', 'ciano':'\033[36m', 'verde':'\033[32m', 'roxo':'\033[35m', 'azul':'\033[34m', 'cinza':'\033[37m'}
+    listaCores = {'limpar':'\033[m',     
+    .             'vermelho':'\033[31m',   
+    .             'azul':'\033[34m', 
+    .             'verde':'\033[32m'} 
+
+   {listaCores[""]}
+    print(f'{listaCores["azul"]} Assim ativa a cor!! {listaCores["limpar"]}')
+        Note-se: Usar "" (aspas duplas) ao citar o elemento da lista.
+--------------------------------------------------------------------------------------------------}

@@ -1,0 +1,72 @@
+==============================================================
+
+Att mais recente:
+
+Além de eu não ter tido sucesso em 100% do que eu queria fazer,
+percebi mais recentemente, enquanto aprendo MySQL, que minha ideia
+era na verdade a criação de algo parecido com uma "chave primária".
+
+Claro, guardado às proporções. 
+
+Ainda assim, deixarei registrado aqui como uma brincadeira dos meus 
+primeiros aprendizados com programação num geral. 
+
+Ou seja, todos os arquivos 8- ou 8.5- são inúteis e desnecessários.
+
+==============================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sistema RG, resumidamente, é adicionar aos dados inseridos uma numeração 
+para que seja facilmente identificado qual objeto os valores representam. 
+
+Dessa forma, evita erros quando os dados forem repetidos, 
+pois com valores iguais há uma confusão ao compará-los. 
+
+#[nome, idade, rg]
+
+dados = []
+dados.append(['Marcos', 15, 0])
+dados.append(['Fiona', 14, 1])
+dados.append(['Maria', 11, 2])
+
+ou, 
+
+dados = []
+rg=0
+while True: [stop]
+    nome = str(input('Nome: '))
+    if nome=='stop':
+        break
+    idade = int(input('Idade: '))
+    dados.append([nome, idade, rg])
+    rg+=1
+
+dados --> [['Marcos', 15, 0], [Fiona', 14, 1], ['Maria', 11, 2]]
+
+1- Cria-se uma lista de dados ('dados = []', ou 'dados = list()')
+2- Dentro de um laço cria-se as variáveis de dados desejados (nome, idade, rg)
+3- Os valores dessas variáveis são inseridas como listas, dentro de uma lista maior de dados:
+    3.1- dados.append([nome, idade, rg])
+    3.2- lista maior --> dados = []
+    3.3- listas menores --> [nome, idade, rg]
+
+
+Pois bem, dessa maneira, temos TODOS os dados registrado sob um ID,
+ou seja, todos os valores vão possuir um RG dentro dessa base de dados.
+Assim, mesmo se embaralhar todas as 'mini-listas', elas continuarão tendo 
+esse meio de identificação.
+
+Se por exemplo, usando 'sorted()' para ordenar alfabeticamente, a ordem 
+de registro (do primeiro registrado ao último) NÃO se perderá.
+

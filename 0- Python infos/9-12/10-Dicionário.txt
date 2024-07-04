@@ -1,0 +1,78 @@
+{---[ Dicionários -> {} ou 'dict()' ]--------------------------------------------------------------
+
+    {---[ Explicação sobre ]-------------------------}
+        Dicionário é uma coleção de dados (cujo ITENS são) ordenados em "keys":"values". 
+        É uma estrutura mutável e NÃO permite duplicata de 'keys'.
+
+        Ou seja,    dict() -> {"keys":'values', "keys2":'values2'}  
+        .                          item0             item1
+        "values" = dados/infos;
+        "keys" = recebem os valores;
+        "itens" = recebem as "keys":'valores';
+        'dict()' = recebe os "itens" 
+        
+        --------------
+        "key":"values", exemplo:
+        eu = {"Nome":'Marcos',
+        "Idade":25,
+        "Anime":'One Piece'}
+
+        Mutável e NÃO duplicata: Se eu digito uma 'key' repetida, ex: "Anime":'Bleach', 
+        o comando substituirá o 'valor' anterior.
+        Dessa forma eu consigo MUDAR o conteúdo do meu dicionário; 
+        assim como é IMPOSSÍVEL repetir uma mesma 'key'.
+
+        print(eu.values()) --> (['Marcos', 25, 'One Piece'])
+        print(eu.keys()) ----> (['Nome', 'Idade', 'Anime'])
+        print(eu.items()) ---> ([('Nome', 'Marcos'), ('Idade', 25), ('Anime', 'One Piece')])
+
+    {---[ Usando dict() em 'for' ]-------------------}    
+        (for em dicionário) - Posso usar 'for' da seguinte maneira:
+            Tendo, dLivros = {"Nome":'Guerra X', "Autor":'Jon Krow', "Ano":'1986'}
+            for key, value in dLivros
+                print(f'{key} = {value}') 
+                
+                --> ele retorna todos os dados:
+            "Nome: Guerra X
+                Autor: Jon Krow
+                Ano: 1986"
+
+        ('for' em lista de dicionários) - Em caso INÚMEROS dicionários em 1 lista:
+            Tendo, dLivros = [{"Nome":'Guerra X', "Autor":'Jon Krow', "Ano":'1986'},
+            .                 {"Nome":'Peace Here', "Autor":'Jane Snow', "Ano":'1978'},
+            .                 {"Nome":'Light House', "Autor":'Ben Minow', "Ano":'1995'}]
+            for l in dLivros:
+                print('--------')
+                for key, value in l.items():
+                    print(f'{key}: {value}')
+            --------
+            Nome: Guerra X
+            Autor: Jon Krow
+            Ano: 1986
+            --------
+            Nome: Peace Here
+            Autor: Jane Snow
+            Ano: 1978
+            --------
+            Nome: Light House
+            Autor: Ben Minow
+            Ano: 1995
+
+        'for' EFICIENTE: 
+        --------------
+        Ao usar o for, há possibilidade de fazer o seguinte:
+            for l in range(0, len(dLivros)):
+                print(f'{dLivros[l]["Autor"]} escreveu o livro {dLivros[l]["Nome"]}.')
+        
+        Pois o l vai se tornando 0, 1, 2, etc, e usando esse valor em [l] 
+        para citar a info desejada dentro da lista.
+        
+        --------------
+        Porém, é desnecessário, basta usar:
+            for l in dLivros:
+                print(f'{l["Autor"]} escreveu o livro {l["Nome"]}.')
+
+        l["Nome"] -> dict[key]
+        o próprio valor de 'l' se torna o dicionário,
+        usando apenas a 'key' desejada depois do dict.
+--------------------------------------------------------------------------------------------------}

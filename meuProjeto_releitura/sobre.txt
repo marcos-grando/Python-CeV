@@ -1,0 +1,7 @@
+Pasta com minha releitura de alguns exercícios feitos com o Curso em Vídeo. 
+
+No total foram 115 exercícios, e aqui estarei fazendo uma releitura 
+com o conhecimento que adquiri desde o início.
+Tornando o código mais interativo e bonito do que era inicialmente.
+
+Até o momento está feito releitura apenas da pasta 'game'.

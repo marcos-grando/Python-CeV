@@ -1,0 +1,304 @@
+{---Tipos primitivos-------------------------------------------------------------------------------
+    valor inteiro:          int() ----> Para números inteiros ------------ 17, 21, 35, 42
+    valor flutuante(real)   float() --> Números de ponto flutuante ------- 2.3, 1.6, 14.9, -67.1
+    valor booleano          bool() ---> Armazena True ou False ----------- True, False
+    string                  str() ----> Conjunto de caracteres ----------- 'Olá', 'Tenho 20 anos', etc
+    Indicador               type() ---> Indica o tipo primitivo da var --- x = 'Python'   print(type(x)) --> tipo primitivo é string
+--------------------------------------------------------------------------------------------------}
+
+{---Operadores Aritméticos-------------------------------------------------------------------------
+    + -> Adição             ** -> Potencia
+    - -> Subtração          // -> Divisão inteira
+    * -> Multiplicação      %  -> Resto da divisão
+    / -> Divisão -
+
+    Ordem de Precedência
+    ()
+    **
+    *  /  //  %
+    +  -
+--------------------------------------------------------------------------------------------------}
+
+{---Módulos----------------------------------------------------------------------------------------
+    import module --> Insere toda a biblioteca de funções do módulo, incluindo funções não usadas!
+    from module import function -> Reduz uso de memória ao especificar a função desejada do módulo!
+
+    math -> Biblioteca de operadores aritméticos
+        sqrt()  --> Raiz Quadrada de um numero ------- raiz = math.sqrt(numero)
+        floor() --> Arredonda o numero para baixo ---- 5,23 fica 5,00
+        ceil() ---> Retorna um valor inteiro --------- 5,23 fica 5
+        hypot() --> Retorna a hipotenusa dos catetos - math.hypot(co, ca)
+        pow() ----> Potencia de um numero ------------ pow(2, 3) = 2³ = 8
+        radians()-> Converte em graus radianos ------- print(math.radians(180))
+        cos() ----> Retorne o cosseno em radianos ---- print(math.cos(math.radians(x)))
+        sin() ----> Retorne o seno em radianos ------- print(math.sin(math.radians(x)))
+        tan() ----> Retorne a tangente em radianos---- print(math.tan(math.radians(x)))
+
+    random -> Gerar numeros pseudoaleatorios
+        randint() --> Retorna um numero inteiro no range ---------- random.randint(1, 10)
+        choice() ---> Retorna um elemento aleatório da sequência - random.choice(x)
+        shuffle() --> Embaralha a sequência x no lugar ------------ random.shuffle(y)
+
+    Entre diversas outras bibliotecas (ou módulos).
+--------------------------------------------------------------------------------------------------}
+
+{---Manipulando Textos-----------------------------------------------------------------------------
+    frase = 'Amo café!'
+    |A|m|o| |c|a|f|é|!|
+    |0|1|2|3|4|5|6|7|8| = No total, 9 caracteres (contabilizado do 0 ao 8)
+    
+    frase[2] ------> Pega os caracteres das posições indicadas ----------- letra o
+    frase[4:8] ----> Pega os caracteres das posições indicadas ----------- café
+    frase[4:8:2] --> Pega os caracteres das posições indicadas pulando 2 - cf
+    len(frase) ----> Mostra quantidade de caracteres --------------------- len(frase) = 9 caracteres
+    .count() ------> Conta repetição do caracter ------------------------- frase.count('m') = 1 vez
+    .find() -------> Procura os caracteres escolhido --------------------- frase.find('café') = 4
+    .replace() ----> Substitui/replace palavras por outra ---------------- frase.replace('café','açaí') = 'Amo açaí!'
+    .upper() ------> Todos os caracteres em maiúscula--------------------- frase.upper() = 'AMO CAFÉ!'
+    .lower() ------> Todos os caracteres em minúsculo -------------------- frase.lower() = 'amo café!'
+    .capilalize() -> Todos caracteres em minúsculo exceto 1 letra -------- frase.capitalize() = 'Amo café!'
+    .title() ------> Todas palavras começam com letra maiúscula ---------- frase.title() = 'Amo Café'
+    .strip() ------> Retira qualquer espaços no começo e fim da String --- frase.strip() 
+        frase.lstrip() ---->  'left' .lstrip() -> retira os espaços à esquerda  
+        frase.rstrip() ----> 'right' .rstrip() -> retira os espaços à direita
+    .split() ------> Frase dividida por suas palavras (inicia c espaço) -- frase.split() = 'Amo','café!'
+    .join() -------> Junta as palavras divididas formando 1 frase só ----- '-'.join.frase = 'Amo-café!'
+--------------------------------------------------------------------------------------------------}
+
+{---Condições--------------------------------------------------------------------------------------
+
+    Condição Simples    
+        num = input('Digite um número inteiro: ')
+        numInt = int(num)
+        if num!=numInt:
+            print('[Erro] Você não digitou um número inteiro!!')
+
+    Condição Composta
+        num = input('Digite um número inteiro: ')
+        numInt = int(num)
+        if num!=numInt:
+            print('[Erro] Você digitou um número inteiro!!')
+        else:
+            print('Correto, {num} é um número inteiro!')
+
+    Condição Aninhada
+        if condição:
+            script 1
+        elif condição:
+            script 2
+        elif condição:
+            script 3
+        else:
+            script 4
+        Ou seja,'Se acontecer isso: script 1
+                Se acontecer isso: script 2
+                Se acontecer isso: script 2
+                Se não acontecer: script 4'
+
+    Condição 'in lista':
+        lista = [maçã, ameixa, laranja]
+        if/elif in lista:
+            script 1
+        ou
+        if/elif in 'maçã ameixa laranja':
+            script 1        
+--------------------------------------------------------------------------------------------------}
+
+{---Style(ANSI)------------------------------------------------------------------------------------
+
+    \033[style;text;background m]
+        style: estilo da fonte;
+        text: cor do texto;
+        back: cor do fundo.        
+    \033[0;33;44m]
+
+    pré-style: 0 (none);        pré-text: 30 (preto);      pré-back: 40 (preto);    
+    .          1 (bold);                  31 (vermelho);             41 (vermelho);  
+    .          4 (underline);             32 (verde);                42 (verde);      
+    .          7 (negative).              33 (amarelo);              43 (amarelo);   
+    .                                     34 (azul);                 44 (azul);
+    .                                     35 (roxo);                 45 (roxo);
+    .                                     36 (ciano);                46 (ciano);
+    .                                     37 (cinza);                47 (cinza);      
+    .                                     97 (branco).               107 (branco).      
+    .    
+    SEMPRE colocar '\033[m' no final de qualquer código para que 
+    o efeito estilizado se limite ao código desejado.           
+
+    listaCores = {'azul':'\033[34m',    
+    .             'vermelho':'\033[31m',   
+    .             'limpar':'\033[m'}
+     
+    print(f'{listaCores["azul"]} Assim ativa a cor!! {listaCores["limpar"]}')
+        Note-se: Usar "" (aspas duplas) ao citar o elemento da lista.                        
+--------------------------------------------------------------------------------------------------}
+
+{---Repetições FOR---------------------------------------------------------------------------------
+
+    for var in range(1,11):     
+        print('passo {var}')
+    print('Passo a passo concluído!')
+
+    for var in range(3, 0, -1)  
+        print(var)
+    print('Contagem regressia finalizada')
+
+    for var in range(0, 7, 2)
+        print(var)
+    print('Fim! Você foi do 0 até o 6, de 2 em 2!')
+
+    {-------------------Com INPUT's incluso:----}
+    n = int(input('Número: '))
+    for var in range(0, n+1)  
+        print(var)
+    print('Fim')
+
+    i = int(input('Início: '))
+    f = int(input('Fim: '))
+    p = int(input('Passo: '))
+    for var in range(i, f+1, p)
+        print(c)
+    pirnt('Fim')
+
+    {-----------Usando LISTAS com repetição:----}
+    n = []
+    for c in range(0,3):
+        n.append(int(input('Digite: ')))   
+    print(f'''Você escolheu:
+        Começar na casa {n[0]}
+        Terminar na casa {n[1]}
+        E {n[2]} passo de cada vez!''')
+    for d in range(n[0], n[1]+1, n[2]):     
+        print(f'Passo {d} --> ', end='')
+    print('Fim')
+--------------------------------------------------------------------------------------------------}
+
+{---BREAK repetição:-------------------------------------------------------------------------------
+    n = 0
+    print("'0' pra parar!")
+    while True:
+        n = int(input('Digite número: '))
+        if n==0:
+            break
+    Ou,
+    stop = 'n'
+    print("'s' pra parar!")
+    while True:
+        quest = input('Digite número: ')
+        stop = input('Parar? ')
+        if stop=='s':
+            break
+--------------------------------------------------------------------------------------------------}
+
+{---Repetições WHILE-------------------------------------------------------------------------------
+
+    var = 0
+    while var != 10+1:      #1
+        print(f'{var}--> ')
+        var += 1            #2
+    print('Fim')
+
+    var = 10
+    while var != 0-1:       #3 
+        print(f'{var--> '})
+        var -= 1            #4
+
+    {--------------Listas & INPUT's incluso:----}
+    nomes = []
+    idade = []
+    stop = 'n'
+    while stop=='n':
+        nomes.append(str(input('Nome: ')))
+        idade.append(int(input('Idade: ')))
+        stop = str(input('Parar?[s/n]: '))    
+
+    {------------------Listas pré definidas:----}
+    pessoas = [1, 2, 3, 4, 5, 6, 7]
+    nomes = ['A', 'B', 'C', 'D', 'D', 'D', 'D']
+    idade = [45, 40, 15, 10, 11, 12, 14]
+    c = 0
+    while pessoas[c]!=pessoas[-1]:
+        print(f'{nomes[c]} com {idade[c]} anos')
+        c += 1
+        if pessoas[c]==pessoas[-1]:
+            print(f'E {nomes[c]} com {idade[c]} anos')
+
+    {-----------------------BREAK repetição:----}
+    n = 0
+    print("'0' pra parar!")
+    while True:
+        n = int(input('Digite número: '))
+        if n==0:
+            break
+    Ou,
+    stop = 'n'
+    print("'s' pra parar!")
+    while True:
+        quest = input('Digite número: ')
+        stop = input('Parar? ')
+        if stop=='s':
+            break
+   
+    {------------while infinito - while True----}
+    c = 1
+    while True: 
+        print(f'{c}--> ')
+        c += 1
+    print('Fim')
+
+    {--------------while True - Lista&Inputs----}
+    pessoas = []
+    p = 0
+    nomes = []
+    idade = []
+    stop = 'n'
+    while True:
+        p += 1
+        pessoas.append(p)
+        nomes.append(str(input('Nome: ')))
+        idade.append(int(input('Idade: ')))
+        stop = str(input('Parar?[s/n]: '))
+        if stop=='s':
+            break    
+    c = 0
+    while True:
+        print(f'{nomes[c]} com {idade[c]} anos')
+        c += 1
+        if pessoas[c]==pessoas[-1]:
+            print(f'E {nomes[c]} com {idade[c]} anos')
+            break
+--------------------------------------------------------------------------------------------------}
+
+{---[ Listas --> var = [] ]------------------------------------------------------------------------
+
+    listaNome = ['A', 'B', 'C', 'D']
+    print(f'O grupo tem: ', end='')
+    for var in listaNome:
+        print(f'{listaNome[var]}.', end='')
+    --> O grupo tem: A. B. C. D.
+
+    {---[ Usando 2+ listas ]----------------------------------}
+        listaNome = ['A', 'B', 'C', 'D']
+        listaIdade = [14, 16, 29, 40]
+        print(f'O grupo tem: ', end='')
+        for grupo in range(0, len(listaNome)):
+            print(f'{listaNome[grupo]} com {listaIdade[grupo]} anos.', end='')
+        --> O grupo tem: A com 14 anos. B com 16 anos. C com 29 anos. D com 40 anos.
+
+    {---[ Inserindo/Removendo valores ]-----------------------}
+    
+        lista = ['abacaxi', 'morango', 'uva', 'maçã']
+    
+        lista[1]='melancia' --> Substitui o valor da [] digitado pelo novo valor digitado
+        lista.append() -------> adiciona um novo valor no final da lista 
+        lista.insert(2,) -----> adiciona um novo valor na posição 2 (ou qualquer outra digitada)
+
+        del lista[] ----------> deleta o valor da posição digitada 
+        lista.pop() ----------> deleta o valor da posição digitada
+        lista.remove() -------> delete o primeiro valor digitado encontrado na lista 
+
+        if 'x' in lista:
+            lista.remove('x')
+        Não ocorre erro e caso X entrar na lista, é removido.
+
+--------------------------------------------------------------------------------------------------}

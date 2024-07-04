@@ -1,0 +1,38 @@
+==============================================================
+
+Att mais recente:
+
+Ainda que a manipulação de .txt não seja inútil, nesse caso para 
+o propósito de usar um banco de dados é mais eficiente a integração com
+o MySQL (como feito no exercício 115v2).
+
+==============================================================
+
+
+Pode-se usar arquivos.txt como banco de dados.
+    Por exemplo, na pasta do projeto, crirar um arquivo.txt, e os dados recebidos pelo arquivo main
+    é digitado no arquivo.txt.
+    Dessa forma, também, através do arquivo main, eu leio os dados presentes no arquivo.txt.
+
+Alguns macetes na utilização de arquivos.txt através de scripts:
+        
+    Básico:
+        arquivo = banco_de_dados.txt
+
+        open(arquivo) -----------> abre o arquivo de texto
+        arquivo.close() ---------> fecha o arquivo de texto
+
+        open(arquivo, 'rt') -----> 'rt'= read text / define sua função como leitura.
+        open(arquivo, 'wt') -----> 'wt'= write text / define sua função como escrita.
+        open(arquivo, 'at') -----> 'at'= append text / adiciona texto no arquivo.txt.
+        open(arquivo, 'wt+') ----> '+'= novo arquivo / se não existir o arquivo cria um novo e define sua função.
+
+        arquivo.write('dados') --> escreve em 'arquivo.txt' os 'dados' escritos.
+
+    Cadastrando dados:
+        open(arquivo, 'at')
+        arquivo.write('dados')
+        arquivo.close()
+
+Alguns erros:
+    FileNotFoundErro -> 'Arquivo não encontrado'
