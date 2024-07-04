@@ -27,7 +27,6 @@ Ou seja, todos os arquivos 8- ou 8.5- são inúteis e desnecessários.
 
 
 
-
 '''Sistema de RG é útil para COMPARAÇÃO, ou seja (if X != Y), 
 sendo TODOS os dados de X iguais os de Y, teríamos X != Y -> False; 
 Inserindo um código de ID nesses dados, teríamos X != Y -> True. '''

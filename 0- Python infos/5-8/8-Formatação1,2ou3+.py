@@ -27,7 +27,6 @@ Ou seja, todos os arquivos 8- ou 8.5- são inúteis e desnecessários.
 
 
 
-
 #com sistema de RG: ['nome', RG]     ===     'RG' sempre único, dados pessoas podem ser repetidos!
 
 lista = [['pessoa A', 0],['pessoa B', 1],['pessoa C', 2],['pessoa D', 3],['pessoa E', 4]]

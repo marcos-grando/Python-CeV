@@ -27,7 +27,6 @@ Ou seja, todos os arquivos 8- ou 8.5- são inúteis e desnecessários.
 
 
 
-
 # [nome, idade, rg]
 dados = [['Marcos', 15, 0], ['Fiona', 14, 1], ['Maria', 11, 2], ['Marcos', 15, 3], ['Jusé', 15, 4]]
 ordAlf = sorted(dados)
