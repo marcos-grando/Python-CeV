@@ -1,7 +1,7 @@
 <h1 align="center">Python CeV</h1>
 <h2>2º Curso (Python) - através do Curso em Vídeo</h2>
 <h3>Aqui estão presentes todos os conteúdos criados enquanto acompanhava o curso de Python no Curso em Vídeo, com o professor Gustavo Guanabara.</h3>
-<p>Esse foi o meu 2º curso feito através do Curso em Vídeo, com o professor Gustavo Guanabara. Foi com ele que consegui internalizar os conceitos de lógica de programação que aprendi no curso de JavaScript, além claro de aprender incisivamente o básico e até alguns assuntos intermediário da linguagem Python.<br>Iniciei o curso dia 28/março/2024<br>Terminei o curso dia 20/maio/2024<br>(Histórico youtube)</p>
+<p>Esse foi o meu 2º curso feito através do Curso em Vídeo, com o professor Gustavo Guanabara. Foi com ele que consegui internalizar os conceitos de lógica de programação que aprendi no curso de JavaScript, além claro de aprender incisivamente o básico e até alguns assuntos intermediário da linguagem Python.</p>
 <br>
 
 
@@ -33,8 +33,22 @@
 
 
 <h2>Cursos CeV que eu fiz:</h2>
+
 <h3><a href="https://github.com/marcos-grando/JavaScript-CeV">1º - JavaScript</a></h3>
+<p>JavaScript iniciado 27/fevereiro/2024<br>
+Javascript finalizado 25/março/2024</p>
+
 <h3><a href="https://github.com/marcos-grando/Python-CeV">2º - Python</a></h3>
+<p>Python iniciado em 28/março/2024<br>
+Python finalizado em 20/maio/2024</p>
+
 <h3>3º - MySQL (Sem repositório)</h3>
+<p>MySQL iniciado em 14/junho/2024<br>
+MySQL finalizado em 02/julho/2024</p>
+
 <h3><a href="https://github.com/marcos-grando/HTML-CSS-CeV">4º - HTML5/CSS3</a></h3>
-(Organizado sob ordem cronológica)
+<p>html5/css3 iniciado em 03/junho/2024<br>
+html5/css3 finalizado em xx/xx/2024<br>
+(Fiz 1ºmdl > MySQL > 2º,3º,4ºmdls)</p>
+
+<p>(Organizado sob ordem cronológica)</p>
