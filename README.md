@@ -1,4 +1,3 @@
-# Python
 <h1 align="center">Python CeV</h1>
 <h2>2º Curso (Python) - através do Curso em Vídeo</h2>
 <h3>Aqui estão presentes todos os conteúdos criados enquanto acompanhava o curso de Python no Curso em Vídeo, com o professor Gustavo Guanabara.</h3>
